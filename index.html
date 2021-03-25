@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <title>NYC Transit Variables</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id='mapcountainer'></div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>why hello there</p>
+  </div>
+</div>
+
+  <div id="legend">
+    <table>
+      <tr>
+        <td style="background: #2d2d2d"></td>
+        <td class="price">
+          <h1 class="title">NYC Transit Variables</h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="background: #444"></td>
+        <td class="price">
+          <p style="margin:5px">
+            hey
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="background: #333"></td>
+        <td class="price">
+          <div class="nav-buttons">
+            <a href="#" id="cars-fill-button" class="nav-button nav-button-selected">Cars</a>
+            <a href="#" id="income-fill-button" class="nav-button">Income</a>
+            <a href="#" id="density-fill-button" class="nav-button">Density</a>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="background: #333"></td>
+        <td class="price">
+          <h2 class="title">Legend</h2>
+        </td>
+      </tr>
+
+      <tr class="cars-fill-legend">
+        <td style="background: #b3cde0"></td>
+        <td class="price">Fewer Than 2 Cars per Person </td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #6497b1"></td>
+        <td class="price">2 - 2.5 Cars per Person</td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #005b96"></td>
+        <td class="price">2.5 - 2.75 Cars Per Person</td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #03396c"></td>
+        <td class="price">2.75 - 3 Cars Per Person</td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #011f4b"></td>
+        <td class="price">3+ Cars Per Person</td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #333"></td>
+        <td class="price"><h2 class="title">Description</h2></td>
+      </tr>
+      <tr class="cars-fill-legend">
+        <td style="background: #333"></td>
+        <td class="price">hi</td>
+      </tr>
+
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #fff"></td>
+        <td class="price">$0 - $33965</td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #ffbfbf"></td>
+        <td class="price">$33966 - $55897</td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #ff8080"></td>
+        <td class="price">$55898 - $70389</td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #ff4040"></td>
+        <td class="price">$70390 - $93365</td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #ff0000"></td>
+        <td class="price">$93366+</td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #333"></td>
+        <td class="price"><h2 class="title">Description</h2></td>
+      </tr>
+      <tr class="income-fill-legend" style="display: none;">
+        <td style="background: #333"></td>
+        <td class="price">hi</td>
+      </tr>
+
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #96ED89"></td>
+        <td class="price">Fewer than 15539 People per Square Mile</td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #45BF55"></td>
+        <td class="price">15540-28057 People per Square Mile</td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #168039"></td>
+        <td class="price">28058-45232 People per Square Mile</td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #044D29"></td>
+        <td class="price">45233-66341 People per Square Mile</td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #00261C"></td>
+        <td class="price">Over 66,342 People per Square Mile</td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #333"></td>
+        <td class="price"><h2 class="title">Description</h2></td>
+      </tr>
+      <tr class="density-fill-legend" style="display: none;">
+        <td style="background: #333"></td>
+        <td class="price">hi</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
