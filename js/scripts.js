@@ -68,7 +68,7 @@ map.on('style.load', function() {
 
   map.addSource('carsandpeeps', {
     type: 'geojson',
-    data: './data/carsandpeople2.geojson'
+    data: './data/carsandpeople3.geojson'
   });
 
 
@@ -172,7 +172,7 @@ map.on('style.load', function() {
       "type":"line",
       "paint":{
         'line-color': '#d4d4d4',
-        'line-width': 4,
+        'line-width': 2,
       }
   });
 
@@ -244,12 +244,12 @@ map.on('mousemove', function(e) {
     if (hoveredFeature.layer.id === 'cars-fill') {
       var zipcode = hoveredFeature.properties.zcta
       var name = hoveredFeature.properties.Refactored_borough
-      var carpop = hoveredFeature.properties.Refactored_popovercar
+      var carpop = hoveredFeature.properties.popovercar2dec
       var popupContent = `
        <div>
        <h2>Zip Code: ${zipcode}</h2>
        <h4>Borough: ${name}</h4>
-       <p> This part of NYC has ${carpop} cars per person.</p>
+       <p> This zip code (${zipcode}) has ${carpop} cars per person.</p>
        </div>
      `
 
@@ -265,7 +265,7 @@ map.on('mousemove', function(e) {
          <div>
          <h2>Zip Code: ${zipcode}</h2>
          <h4>Borough: ${name}</h4>
-         <p> This part of NYC has a population of ${pop} and a density rate of ${densipop} (people per square mile).</p>
+         <p>This zip code (${zipcode}) has a population of ${pop} and a density rate of ${densipop} people per square mile.</p>
          </div>
        `
 
@@ -280,7 +280,7 @@ map.on('mousemove', function(e) {
        <div>
        <h2>Zip Code: ${zipcode}</h2>
        <h4>Borough: ${name}</h4>
-       <p> This part of NYC has an average houseold income of ${dollas} $ per year. </p>
+       <p>This zip code (${zipcode}) has an average houseold income of $${dollas} per year. </p>
        </div>
      `
 
