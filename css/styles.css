@@ -183,6 +183,18 @@ h1, h2 {
  width: 50%; /* Could be more or less, depending on screen size */
 }
 
+.modal h1{
+  text-align: center;
+}
+
+.modal p{
+  text-align: center;
+}
+
+.modal h4{
+  text-align: center;
+}
+
 /* The Close Button */
 .close {
  color: #666;
