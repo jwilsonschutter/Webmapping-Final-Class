@@ -24,7 +24,7 @@ map.addControl(navigators, 'bottom-right');
 // data for income using 2018 acs survey
 // https://docs.mapbox.com/mapbox-gl-js/example/updating-choropleth/ was used for fill color
 map.on('style.load', function() {
-//
+  //
 
 
   //income layer
@@ -64,7 +64,7 @@ map.on('style.load', function() {
   });
 
 
-//add source and layer for cars and carsandpeople
+  //add source and layer for cars and carsandpeople
 
   map.addSource('carsandpeeps', {
     type: 'geojson',
@@ -101,7 +101,7 @@ map.on('style.load', function() {
     }
   });
 
-//adding in population density as a second factor
+  //adding in population density as a second factor
 
   map.addSource('popdensity', {
     type: 'geojson',
@@ -164,16 +164,16 @@ map.on('style.load', function() {
     data: 'data/nyc-subway-route.geojson'
   });
 
-//Adding a Layer for sub routes based on Prof Whong's https://github.com/chriswhong/mapboxgl-nyc-subway/blob/master/js/subway-layer-styles.js
+  //Adding a Layer for sub routes based on Prof Whong's https://github.com/chriswhong/mapboxgl-nyc-subway/blob/master/js/subway-layer-styles.js
   map.addLayer({
-    "id":"subway_routes",
-      "minzoom": 8,
-      "source":"nyc-sub-routes",
-      "type":"line",
-      "paint":{
-        'line-color': '#d4d4d4',
-        'line-width': 2,
-      }
+    "id": "subway_routes",
+    "minzoom": 8,
+    "source": "nyc-sub-routes",
+    "type": "line",
+    "paint": {
+      'line-color': '#d4d4d4',
+      'line-width': 2,
+    }
   });
 
   map.addSource('nyc-sub-stop', {
@@ -181,46 +181,46 @@ map.on('style.load', function() {
     data: 'data/nyc-subway-stop.geojson'
   });
 
-//adding in subway station circles and points
+  //adding in subway station circles and points
 
-map.addLayer({
-  "id":"subway_stations",
-      "minzoom":12,
-      "source":"nyc-sub-stop",
-      "type":"circle",
-      "paint":{
-         "circle-color":"#d3d3d3",
-         "circle-radius":4,
-         "circle-opacity":1,
-         "circle-stroke-width":1,
-       }
-});
-
-//adding in subway station labels
   map.addLayer({
-    "id":"subway_stations_labels",
-      "minzoom":13,
-      "source":"nyc-sub-stop",
-      "type":"symbol",
-      "layout":{
-         "text-field":"{name}",
-         "symbol-placement":"point",
-         "symbol-spacing":250,
-         "symbol-avoid-edges":false,
-         "text-size":14,
-         "text-anchor":"center"
-      },
-      "paint":{
-         "text-halo-color":"rgba(255, 255, 255, 1)",
-         "text-halo-width":1,
-         "text-translate":[
-            1,
-            20
-         ],
-       }
+    "id": "subway_stations",
+    "minzoom": 12,
+    "source": "nyc-sub-stop",
+    "type": "circle",
+    "paint": {
+      "circle-color": "#d3d3d3",
+      "circle-radius": 4,
+      "circle-opacity": 1,
+      "circle-stroke-width": 1,
+    }
+  });
+
+  //adding in subway station labels
+  map.addLayer({
+    "id": "subway_stations_labels",
+    "minzoom": 13,
+    "source": "nyc-sub-stop",
+    "type": "symbol",
+    "layout": {
+      "text-field": "{name}",
+      "symbol-placement": "point",
+      "symbol-spacing": 250,
+      "symbol-avoid-edges": false,
+      "text-size": 14,
+      "text-anchor": "center"
+    },
+    "paint": {
+      "text-halo-color": "rgba(255, 255, 255, 1)",
+      "text-halo-width": 1,
+      "text-translate": [
+        1,
+        20
+      ],
+    }
   })
 
-//adding layer for sub stops - based on Prof. Whong's https://github.com/chriswhong/mapboxgl-nyc-subway/blob/master/js/subway-layer-styles.js
+  //adding layer for sub stops - based on Prof. Whong's https://github.com/chriswhong/mapboxgl-nyc-subway/blob/master/js/subway-layer-styles.js
 
 
 });
@@ -256,12 +256,12 @@ map.on('mousemove', function(e) {
       popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
     }
 
-      if (hoveredFeature.layer.id === 'density-fill') {
-        var zipcode = hoveredFeature.properties.zcta
-        var name = hoveredFeature.properties.Refactored_borough
-        var pop = hoveredFeature.properties.Refactored_population
-        var densipop = hoveredFeature.properties.Refactored_density
-        var popupContent = `
+    if (hoveredFeature.layer.id === 'density-fill') {
+      var zipcode = hoveredFeature.properties.zcta
+      var name = hoveredFeature.properties.Refactored_borough
+      var pop = hoveredFeature.properties.Refactored_population
+      var densipop = hoveredFeature.properties.Refactored_density
+      var popupContent = `
          <div>
          <h2>Zip Code: ${zipcode}</h2>
          <h4>Borough: ${name}</h4>
@@ -269,8 +269,8 @@ map.on('mousemove', function(e) {
          </div>
        `
 
-        popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
-      }
+      popup.setLngLat(e.lngLat).setHTML(popupContent).addTo(map);
+    }
 
     if (hoveredFeature.layer.id === 'income-fill') {
       var zipcode = hoveredFeature.properties.zcta
@@ -370,7 +370,7 @@ window.onclick = function(event) {
 }
 
 //show modal on load
-$( document).ready(function() {
+$(document).ready(function() {
   $('#myModal').show();
   // Handler for .load() called.
 });
